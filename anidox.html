@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <title>AniDox</title>
+  </head>
+  <body>
+    <header>
+      <h1>AniDox</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#latest-releases">Latest Releases</a></li>
+          <li><a href="index.html#popular">Popular Anime</a></li>
+          <li><a href="index.html#anime">Anime</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for anime..." />
+        <button>Search</button>
+      </div>
+      <section id="home" class="hero-section">
+        <div class="hero-content">
+          <h2>Welcome to AniDox</h2>
+          <p>Discover the best anime streaming experience.</p>
+          <a href="#anime" class="btn">Explore Anime</a>
+        </div>
+      </section>
+      <section id="anime" class="featured-section">
+        <h2>Featured Anime</h2>
+        <div class="anime-grid">
+          <div class="anime-item">
+            <img src="img/featured-anime.jpg" alt="Featured Anime" />
+            <div class="anime-item-title">My Hero Academia</div>
+          </div>
+          <!-- Add more anime items as needed -->
+        </div>
+      </section>
+      <section id="latest-releases" class="latest-releases-section">
+        <h2>Latest Releases</h2>
+        <div class="anime-grid">
+          <div class="anime-item">
+            <img src="img/anime1.jpg" alt="Anime 1" />
+            <div class="anime-item-title">Anime 1</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime2.jpg" alt="Anime 2" />
+            <div class="anime-item-title">Anime 2</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime3.jpg" alt="Anime 3" />
+            <div class="anime-item-title">Anime 3</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime4.jpg" alt="Anime 4" />
+            <div class="anime-item-title">Anime 4</div>
+          </div>
+        </div>
+      </section>
+      <section id="series" class="series-section">
+        <h2>Series</h2>
+        <div class="anime-grid">
+          <div class="anime-item">
+            <img src="img/anime5.jpg" alt="Anime 5" />
+            <div class="anime-item-title">Anime 5</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime6.jpg" alt="Anime 6" />
+            <div class="anime-item-title">Anime 6</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime7.jpg" alt="Anime 7" />
+            <div class="anime-item-title">Anime 7</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime8.jpg" alt="Anime 8" />
+            <div class="anime-item-title">Anime 8</div>
+          </div>
+        </div>
+      </section>
+      <section id="popular" class="popular-section">
+        <h2>Popular Anime</h2>
+        <div class="anime-grid">
+          <div class="anime-item">
+            <img src="img/anime9.jpg" alt="Anime 9" />
+            <div class="anime-item-title">Anime 9</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime10.jpg" alt="Anime 10" />
+            <div class="anime-item-title">Anime 10</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime11.jpg" alt="Anime 11" />
+            <div class="anime-item-title">Anime 11</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime12.jpg" alt="Anime 12" />
+            <div class="anime-item-title">Anime 12</div>
+          </div>
+        </div>
+      </section>
+      <section id="trends" class="trends-section">
+        <h2>Trends</h2>
+        <div class="anime-grid">
+          <div class="anime-item">
+            <img src="img/anime13.jpg" alt="Anime 13" />
+            <div class="anime-item-title">Anime 13</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime14.jpg" alt="Anime 14" />
+            <div class="anime-item-title">Anime 14</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime15.jpg" alt="Anime 15" />
+            <div class="anime-item-title">Anime 15</div>
+          </div>
+          <div class="anime-item">
+            <img src="img/anime16.jpg" alt="Anime 16" />
+            <div class="anime-item-title">Anime 16</div>
+          </div>
+        </div>
+      </section>
+      <section id="video-player-section">
+        <h2>Watch Now</h2>
+        <video id="video-player" controls>
+          <source src="video/sample.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-controls">
+          <button id="play-pause-button">Play</button>
+          <span id="current-time">Current time: 0s</span>
+          <span id="duration">Duration: 0s</span>
+          <input type="range" id="progress-bar" value="0" />
+          <span id="volume">Volume: 100%</span>
+          <input
+            type="range"
+            id="volume-slider"
+            min="0"
+            max="100"
+            value="100"
+          />
+          <span id="speed">Speed: 1x</span>
+          <input
+            type="range"
+            id="speed-slider"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 AniDox. All Rights Reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>

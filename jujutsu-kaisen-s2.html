@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jujutsu Kaisen Season 2 - AniDox</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <h1><i class="fas fa-play-circle"></i> AniDox</h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="categories.html"><i class="fas fa-list"></i> Categories</a>
+          </li>
+          <li>
+            <a href="index.html#contact"
+              ><i class="fas fa-info-circle"></i> Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="anime-header">
+        <div class="anime-header-content">
+          <img
+            src="Jujutsu Kaisen Season 2/thumbnails/cover.jpg"
+            alt="Jujutsu Kaisen Season 2 Cover"
+            class="anime-cover"
+          />
+          <div class="anime-info">
+            <h1>Jujutsu Kaisen Season 2</h1>
+            <div class="anime-meta">
+              <span><i class="fas fa-star"></i> 4.9</span>
+              <span><i class="fas fa-tv"></i> TV Series</span>
+              <span><i class="fas fa-closed-captioning"></i> SUB</span>
+            </div>
+            <p class="anime-description">
+              The second season of Jujutsu Kaisen adapts both the "Hidden
+              Inventory/Premature Death" and "Shibuya Incident" arcs. The story
+              delves into Gojo's past and a major incident in Shibuya that will
+              change the jujutsu world forever.
+            </p>
+            <div class="anime-actions">
+              <a href="#episodes" class="btn primary-btn"
+                ><i class="fas fa-play"></i> Watch Now</a
+              >
+              <button class="btn secondary-btn">
+                <i class="fas fa-plus"></i> Add to List
+              </button>
+              <a href="jujutsu-kaisen.html" class="btn secondary-btn"
+                ><i class="fas fa-backward"></i> Season 1</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="episodes" class="episodes-section">
+        <div class="section-header">
+          <h2>Episodes</h2>
+          <div class="episode-filters">
+            <button class="filter-btn active">All Episodes</button>
+            <button class="filter-btn">Subbed</button>
+            <button class="filter-btn">Dubbed</button>
+          </div>
+        </div>
+        <div class="episodes-grid" id="episodesList">
+          <!-- Episodes will be loaded dynamically -->
+        </div>
+        <div class="pagination">
+          <button id="prevPage">Previous</button>
+          <span id="currentPage">Page 1</span>
+          <button id="nextPage">Next</button>
+        </div>
+      </section>
+
+      <section id="info" class="info-section">
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Status</h3>
+            <p>Completed</p>
+          </div>
+          <div class="info-item">
+            <h3>Type</h3>
+            <p>TV Series</p>
+          </div>
+          <div class="info-item">
+            <h3>Episodes</h3>
+            <p>23 Episodes</p>
+          </div>
+          <div class="info-item">
+            <h3>Duration</h3>
+            <p>24 min per ep</p>
+          </div>
+          <div class="info-item">
+            <h3>Studios</h3>
+            <p>MAPPA</p>
+          </div>
+          <div class="info-item">
+            <h3>Genres</h3>
+            <p>Action, Fantasy, Horror, Supernatural</p>
+          </div>
+          <div class="info-item">
+            <h3>Rating</h3>
+            <p>R - 17+ (violence & profanity)</p>
+          </div>
+          <div class="info-item">
+            <h3>Release Date</h3>
+            <p>Jul 6, 2023</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About AniDox</h3>
+          <p>Your premium destination for anime streaming.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#episodes">Episodes</a></li>
+            <li><a href="#info">Info</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 AniDox. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const episodesGrid = document.querySelector(".episodes-grid");
+        const totalEpisodes = 23;
+
+        for (let i = 1; i <= totalEpisodes; i++) {
+          const episodeCard = document.createElement("div");
+          episodeCard.className = "episode-card";
+          episodeCard.innerHTML = `
+                    <div class="episode-thumbnail">
+                        <img src="Jujutsu Kaisen Season 2/thumbnails/ep${i}.jpg" alt="Episode ${i}" loading="lazy">
+                        <div class="episode-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="episode-info">
+                        <h3>Episode ${i}</h3>
+                        <span class="episode-duration">24 min</span>
+                    </div>
+                `;
+          episodeCard.addEventListener("click", () => {
+            window.location.href = `watch-s2.html?episode=${i}`;
+          });
+          episodesGrid.appendChild(episodeCard);
+        }
+      });
+
+      const EPISODES_PER_PAGE = 12;
+      let currentPage = 1;
+      const totalEpisodes = 24;
+
+      function loadEpisodes(page) {
+        const episodesList = document.getElementById("episodesList");
+        episodesList.innerHTML = "";
+
+        const start = (page - 1) * EPISODES_PER_PAGE + 1;
+        const end = Math.min(page * EPISODES_PER_PAGE, totalEpisodes);
+
+        for (let i = start; i <= end; i++) {
+          const episodeCard = document.createElement("div");
+          episodeCard.className = "episode-card";
+          episodeCard.innerHTML = `
+                    <div class="episode-thumbnail">
+                        <img src="thumbnails/ep${i}.jpg" alt="Episode ${i}">
+                        <div class="episode-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="episode-info">
+                        <h3>Episode ${i}</h3>
+                        <span class="episode-duration">24 min</span>
+                    </div>
+                `;
+
+          episodeCard.addEventListener("click", () => {
+            window.location.href = `watch.html?anime=jujutsu-kaisen-s2&ep=${i}`;
+          });
+
+          episodesList.appendChild(episodeCard);
+        }
+
+        document.getElementById("currentPage").textContent = `Page ${page}`;
+        document.getElementById("prevPage").disabled = page === 1;
+        document.getElementById("nextPage").disabled =
+          page >= Math.ceil(totalEpisodes / EPISODES_PER_PAGE);
+      }
+
+      // Event Listeners
+      document.getElementById("prevPage").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          loadEpisodes(currentPage);
+        }
+      });
+
+      document.getElementById("nextPage").addEventListener("click", () => {
+        if (currentPage < Math.ceil(totalEpisodes / EPISODES_PER_PAGE)) {
+          currentPage++;
+          loadEpisodes(currentPage);
+        }
+      });
+
+      // Initial load
+      loadEpisodes(1);
+    </script>
+  </body>
+</html>

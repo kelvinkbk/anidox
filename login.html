@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - AniDox</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .login-container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 20px;
+        background: var(--card-bg);
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .login-header h1 {
+        color: var(--primary-color);
+        font-size: 24px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--text-secondary);
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        color: white;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+      }
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+      }
+
+      .login-btn:hover {
+        background: var(--primary-hover);
+      }
+
+      .login-footer {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .login-footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      .login-footer a:hover {
+        text-decoration: underline;
+      }
+
+      .social-login {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .social-btn {
+        padding: 10px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        background: none;
+        color: white;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .social-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>AniDox</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="login-container">
+        <div class="login-header">
+          <h1><i class="fas fa-play-circle"></i> AniDox</h1>
+          <p>Welcome back!</p>
+        </div>
+
+        <?php if (isset($error)): ?>
+        <div class="error-message"><?php echo $error; ?></div>
+        <?php endif; ?>
+
+        <form action="login.php" method="POST">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+
+          <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember" />
+            <label for="remember">Remember me</label>
+          </div>
+
+          <button type="submit" class="login-btn">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+        </form>
+
+        <div class="login-footer">
+          <p><a href="forgot-password.html">Forgot Password?</a></p>
+          <p>Don't have an account? <a href="register.html">Sign up</a></p>
+        </div>
+
+        <div class="social-login">
+          <button class="social-btn">
+            <i class="fab fa-google"></i> Google
+          </button>
+          <button class="social-btn">
+            <i class="fab fa-facebook"></i> Facebook
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2025 AniDox. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "video_streaming",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8082",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A video streaming website",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}

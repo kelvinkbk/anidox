@@ -1,0 +1,341 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #000000; /* Black background */
+  color: #e0e0e0; /* Light text */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #1e1e1e; /* Slightly lighter dark color */
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  color: #ffd700; /* Gold color */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: #ffd700; /* Gold color */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #ffcc00; /* Lighter gold color */
+}
+
+/* Search Bar */
+.search-bar {
+  background-color: #282828;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.search-bar input[type="text"] {
+  background: none;
+  border: none;
+  color: #fff;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  color: #ffd700; /* Gold color */
+  cursor: pointer;
+}
+
+/* Main Content Styles */
+main {
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: #ffd700; /* Gold color */
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Anime Grid Styles */
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.anime-item {
+  background-color: #1e1e1e;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  position: relative; /* Add relative positioning */
+  animation: fadeIn 0.5s ease-out;
+}
+
+.anime-item:hover {
+  transform: scale(1.05);
+}
+
+.anime-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.anime-item-title {
+  position: absolute; /* Position title absolutely */
+  bottom: 0; /* Align title to bottom */
+  left: 0; /* Align title to left */
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: #ffd700; /* Gold color */
+  padding: 0.5rem;
+  box-sizing: border-box; /* Include padding in width */
+  text-align: center;
+}
+
+/* Featured Anime */
+.featured-section .anime-grid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.featured-section .anime-item img {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+
+.hero-section {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* Button style */
+.btn {
+  background-color: #ffd700; /* Gold color */
+  color: #000000; /* Black text */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #ffcc00; /* Lighter gold color */
+}
+
+/* Category List */
+.category-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.category-list li a {
+  background-color: #1e1e1e;
+  color: #ffd700; /* Gold color */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: block;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.category-list li a:hover {
+  background-color: #333;
+}
+
+/* Contact section */
+.contact-section a {
+  color: #ffd700; /* Gold color */
+  text-decoration: none;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  text-align: center;
+  color: #ffd700; /* Gold color */
+}
+
+/* Enhanced Video Player Styles */
+.video-container {
+  position: relative;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-container:hover .video-controls {
+  opacity: 1;
+}
+
+.quality-menu {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  padding: 5px;
+  display: none;
+}
+
+.video-container:hover .quality-menu {
+  display: block;
+}
+
+.quality-menu button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.quality-menu button:hover {
+  color: #ffd700;
+}
+
+.video-error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.error-message {
+  color: white;
+  padding: 20px;
+}
+
+.error-message i {
+  font-size: 48px;
+  color: #ff4444;
+  margin-bottom: 10px;
+}
+
+.error-message button {
+  background: #ffd700;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.error-message button:hover {
+  transform: scale(1.05);
+}
+
+/* Enhanced Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.anime-info {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Modern Card Hover Effects */
+.anime-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .anime-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .featured-section .anime-item img {
+    height: 200px;
+  }
+
+  .video-controls {
+    padding: 10px;
+  }
+
+  .quality-menu {
+    top: auto;
+    bottom: 60px;
+  }
+}

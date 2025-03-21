@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AniDox - Your premium anime streaming destination with the latest shows and movies"
+    />
+    <title>AniDox - Watch HD Anime Online</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <h1><i class="fas fa-play-circle"></i> AniDox</h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#simulcast"
+              ><i class="fas fa-satellite-dish"></i> Simulcast</a
+            >
+          </li>
+          <li>
+            <a href="#movies"><i class="fas fa-film"></i> Movies</a>
+          </li>
+          <li>
+            <a href="#schedule"><i class="fas fa-calendar"></i> Schedule</a>
+          </li>
+          <li class="dropdown">
+            <a href="#browse"
+              ><i class="fas fa-compass"></i> Browse
+              <i class="fas fa-chevron-down"></i
+            ></a>
+            <div class="dropdown-content">
+              <a href="#popular">Popular</a>
+              <a href="#new-releases">New Releases</a>
+              <a href="#alphabetical">Alphabetical</a>
+              <a href="#genres">Genres</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <div class="search-trigger">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="user-menu">
+          <i class="fas fa-user-circle"></i>
+          <div class="user-dropdown">
+            <a href="#profile">Profile</a>
+            <a href="#watchlist">Watchlist</a>
+            <a href="#history">History</a>
+            <a href="#settings">Settings</a>
+            <a href="#logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-container">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search anime..." />
+          <button id="searchButton"><i class="fas fa-search"></i></button>
+          <button id="closeSearch"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="search-results" id="searchResults">
+          <!-- Results will appear here -->
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section id="featured" class="hero-section">
+        <div class="featured-slider">
+          <div class="featured-item active">
+            <div class="featured-content">
+              <div class="featured-meta">
+                <span class="badge new">NEW EPISODE</span>
+                <span class="badge sub">SUB</span>
+              </div>
+              <h2>Jujutsu Kaisen</h2>
+              <p class="episode-info">Episode 24 - The Shibuya Incident</p>
+              <p class="description">
+                Yuji Itadori joins the Jujutsu Sorcerers to fight against Curses
+                and protect humanity.
+              </p>
+              <div class="featured-buttons">
+                <a href="jujutsu-kaisen.html" class="btn primary-btn"
+                  ><i class="fas fa-play"></i> Watch Now</a
+                >
+                <button class="btn secondary-btn">
+                  <i class="fas fa-plus"></i> Add to List
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="featured-nav">
+          <button class="nav-dot active"></button>
+          <button class="nav-dot"></button>
+          <button class="nav-dot"></button>
+        </div>
+      </section>
+
+      <section id="continue-watching" class="content-section">
+        <div class="section-header">
+          <h2>Continue Watching</h2>
+          <a href="#view-all" class="view-all">View All</a>
+        </div>
+        <div class="episode-grid">
+          <div class="episode-card">
+            <div class="progress-bar" style="width: 75%"></div>
+            <img
+              src="img/episode1.jpg"
+              alt="Episode thumbnail"
+              loading="lazy"
+            />
+            <div class="episode-info">
+              <span class="show-title">One Piece</span>
+              <span class="episode-number">Episode 1074</span>
+              <span class="progress">75% completed</span>
+            </div>
+          </div>
+          <!-- More episode cards -->
+        </div>
+      </section>
+
+      <section id="simulcast" class="content-section">
+        <div class="section-header">
+          <h2>Latest Simulcasts</h2>
+          <div class="section-filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Subbed</button>
+            <button class="filter-btn">Dubbed</button>
+          </div>
+        </div>
+        <div class="anime-grid">
+          <div class="anime-item">
+            <div class="episode-badge">New Episode</div>
+            <img src="img/anime1.jpg" alt="Anime thumbnail" loading="lazy" />
+            <div class="anime-item-overlay">
+              <div class="overlay-content">
+                <h3 class="anime-item-title">Demon Slayer</h3>
+                <div class="anime-item-meta">
+                  <span><i class="fas fa-star"></i> 4.9</span>
+                  <span><i class="fas fa-closed-captioning"></i> SUB</span>
+                </div>
+                <p class="anime-item-desc">Latest: Episode 12</p>
+                <button class="watch-now-btn">
+                  <i class="fas fa-play"></i> Watch
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- More anime items -->
+        </div>
+      </section>
+
+      <section id="popular" class="content-section">
+        <div class="section-header">
+          <h2>Popular Now</h2>
+          <a href="#view-all" class="view-all">View All</a>
+        </div>
+        <div class="ranking-grid">
+          <div class="ranking-item">
+            <span class="rank">#1</span>
+            <img src="img/popular1.jpg" alt="Popular anime" loading="lazy" />
+            <div class="ranking-info">
+              <h3>Attack on Titan</h3>
+              <div class="stats">
+                <span><i class="fas fa-eye"></i> 1.2M</span>
+                <span><i class="fas fa-star"></i> 4.9</span>
+              </div>
+            </div>
+          </div>
+          <!-- More ranking items -->
+        </div>
+      </section>
+
+      <section id="latest-releases" class="content-section">
+        <div class="section-header">
+          <h2>Latest Releases</h2>
+          <a href="#view-all" class="view-all">View All</a>
+        </div>
+        <div class="anime-grid">
+          <div class="anime-item">
+            <div class="episode-badge">New Episode</div>
+            <img
+              src="Jujutsu Kaisen/thumbnails/ep1.jpg"
+              alt="Jujutsu Kaisen Episode 1"
+              loading="lazy"
+            />
+            <div class="anime-item-overlay">
+              <div class="overlay-content">
+                <h3 class="anime-item-title">Jujutsu Kaisen</h3>
+                <div class="anime-item-meta">
+                  <span><i class="fas fa-star"></i> 4.9</span>
+                  <span><i class="fas fa-closed-captioning"></i> SUB</span>
+                </div>
+                <p class="anime-item-desc">Episode 1 - Ryomen Sukuna</p>
+                <a href="jujutsu-kaisen.html" class="watch-now-btn"
+                  ><i class="fas fa-play"></i> Watch</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- More anime items -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About AniDox</h3>
+          <p>Your premium destination for anime streaming.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#simulcast">Simulcast</a></li>
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 AniDox. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+      const searchTrigger = document.querySelector(".search-trigger");
+      const searchOverlay = document.getElementById("searchOverlay");
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.getElementById("searchResults");
+      const closeSearch = document.getElementById("closeSearch");
+
+      // Available anime data
+      const animeList = [
+        {
+          title: "One Piece",
+          episodes: 160,
+          url: "one-piece.html",
+          image: "thumbnails/one-piece.jpg",
+        },
+        {
+          title: "Jujutsu Kaisen",
+          episodes: 24,
+          url: "jujutsu-kaisen.html",
+          image: "thumbnails/jujutsu-kaisen.jpg",
+        },
+        {
+          title: "Jujutsu Kaisen Season 2",
+          episodes: 23,
+          url: "jujutsu-kaisen-s2.html",
+          image: "thumbnails/jujutsu-kaisen-s2.jpg",
+        },
+      ];
+
+      searchTrigger.addEventListener("click", () => {
+        searchOverlay.style.display = "block";
+        searchInput.focus();
+      });
+
+      closeSearch.addEventListener("click", () => {
+        searchOverlay.style.display = "none";
+      });
+
+      searchInput.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = animeList.filter((anime) =>
+          anime.title.toLowerCase().includes(query)
+        );
+
+        displayResults(filtered);
+      });
+
+      function displayResults(results) {
+        searchResults.innerHTML = results
+          .map(
+            (anime) => `
+            <div class="result-item" onclick="window.location.href='${anime.url}'">
+                <img src="${anime.image}" alt="${anime.title}">
+                <div class="result-info">
+                    <h3>${anime.title}</h3>
+                    <p>${anime.episodes} episodes</p>
+                </div>
+            </div>
+        `
+          )
+          .join("");
+      }
+    </script>
+  </body>
+</html>

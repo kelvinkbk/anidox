@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Piece - AniDox</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <h1><i class="fas fa-play-circle"></i> AniDox</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="anime-info">
+        <div class="anime-header">
+          <h1>One Piece</h1>
+          <div class="anime-meta">
+            <span>Episodes: 160 available / 1122 total</span>
+            <span>Status: Ongoing</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="episodes-section">
+        <div class="episodes-grid" id="episodesList">
+          <!-- Episodes will be loaded here -->
+        </div>
+        <div class="pagination">
+          <button id="prevPage">Previous</button>
+          <span id="currentPage">Page 1</span>
+          <button id="nextPage">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const EPISODES_PER_PAGE = 24;
+      let currentPage = 1;
+      const totalEpisodes = 160; // Currently available episodes
+
+      function loadEpisodes(page) {
+        const episodesList = document.getElementById("episodesList");
+        episodesList.innerHTML = "";
+
+        const start = (page - 1) * EPISODES_PER_PAGE + 1;
+        const end = Math.min(page * EPISODES_PER_PAGE, totalEpisodes);
+
+        for (let i = start; i <= end; i++) {
+          const episodeCard = document.createElement("div");
+          episodeCard.className = "episode-card";
+          episodeCard.innerHTML = `
+                    <div class="episode-thumbnail">
+                        <img src="thumbnails/ep${i}.jpg" alt="Episode ${i}">
+                        <div class="episode-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="episode-info">
+                        <h3>Episode ${i}</h3>
+                        <span class="episode-duration">24 min</span>
+                    </div>
+                `;
+
+          episodeCard.addEventListener("click", () => {
+            loadEpisode(i);
+          });
+
+          episodesList.appendChild(episodeCard);
+        }
+
+        document.getElementById("currentPage").textContent = `Page ${page}`;
+        document.getElementById("prevPage").disabled = page === 1;
+        document.getElementById("nextPage").disabled =
+          page >= Math.ceil(totalEpisodes / EPISODES_PER_PAGE);
+      }
+
+      // Event Listeners
+      document.getElementById("prevPage").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          loadEpisodes(currentPage);
+        }
+      });
+
+      document.getElementById("nextPage").addEventListener("click", () => {
+        if (currentPage < Math.ceil(totalEpisodes / EPISODES_PER_PAGE)) {
+          currentPage++;
+          loadEpisodes(currentPage);
+        }
+      });
+
+      // Initial load
+      loadEpisodes(1);
+
+      function loadEpisode(epNumber) {
+        const formattedEp = epNumber.toString().padStart(2, '0');
+        // Update video path to use relative path
+        videoPlayer.src = `anime/One Piece/One Piece E${formattedEp}.mp4`;
+        document.title = `One Piece Episode ${epNumber} - AniDox`;
+      }
+    </script>
+  </body>
+</html>

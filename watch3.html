@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch One Piece - AniDox</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <h1><i class="fas fa-play-circle"></i> AniDox</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="one-piece.html">Back to Episodes</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="video-container">
+        <video id="videoPlayer" controls>
+          <source src="" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="episode-navigation">
+          <button id="prevEp" class="nav-btn">Previous Episode</button>
+          <span id="episodeInfo"></span>
+          <button id="nextEp" class="nav-btn">Next Episode</button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const currentEp = parseInt(urlParams.get("ep")) || 1;
+      const videoPlayer = document.getElementById("videoPlayer");
+      const episodeInfo = document.getElementById("episodeInfo");
+
+      function loadEpisode(epNumber) {
+        const formattedEp = epNumber.toString().padStart(2, "0");
+        videoPlayer.src = `D:/anime/One Piece/One Piece E${formattedEp}.mp4`;
+        episodeInfo.textContent = `Episode ${epNumber}`;
+        document.title = `One Piece Episode ${epNumber} - AniDox`;
+      }
+
+      document.getElementById("prevEp").addEventListener("click", () => {
+        if (currentEp > 1) {
+          window.location.href = `watch.html?anime=one-piece&ep=${
+            currentEp - 1
+          }`;
+        }
+      });
+
+      document.getElementById("nextEp").addEventListener("click", () => {
+        if (currentEp < 160) {
+          window.location.href = `watch.html?anime=one-piece&ep=${
+            currentEp + 1
+          }`;
+        }
+      });
+
+      // Load initial episode
+      loadEpisode(currentEp);
+    </script>
+  </body>
+</html>

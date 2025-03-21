@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch Jujutsu Kaisen Season 2 - AniDox</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .video-container {
+        max-width: 1200px;
+        margin: 80px auto 0;
+        padding: 20px;
+      }
+      .video-player {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: #000;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .video-player video {
+        width: 100%;
+        height: 100%;
+      }
+      .episode-info {
+        margin-top: 20px;
+        padding: 20px;
+        background: var(--card-bg);
+        border-radius: 8px;
+      }
+      .episode-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .episode-description {
+        color: var(--text-secondary);
+      }
+      .episode-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .nav-btn {
+        padding: 10px 20px;
+        background: var(--button-bg);
+        color: var(--button-text);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <h1><i class="fas fa-play-circle"></i> AniDox</h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="jujutsu-kaisen-s2.html"
+              ><i class="fas fa-arrow-left"></i> Back to Series</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="video-container">
+        <div class="video-player">
+          <video id="anime-player" controls>
+            <source src="" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="episode-navigation">
+          <button id="prevEp" class="nav-btn">Previous Episode</button>
+          <span id="episodeInfo"></span>
+          <button id="nextEp" class="nav-btn">Next Episode</button>
+        </div>
+        <div class="episode-info">
+          <h2 class="episode-title">Loading episode...</h2>
+          <p class="episode-description">Loading episode description...</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About AniDox</h3>
+          <p>Your premium destination for anime streaming.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 AniDox. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentEp = parseInt(urlParams.get("ep")) || 1;
+        const videoPlayer = document.getElementById("anime-player");
+        const episodeInfo = document.getElementById("episodeInfo");
+        const episodeTitle = document.querySelector(".episode-title");
+
+        function loadEpisode(epNumber) {
+          const formattedEp = epNumber.toString().padStart(2, "0");
+          videoPlayer.src = `D:/anime/Jujutsu Kaisen Season 2/Jujutsu Kaisen Season 2 E${formattedEp}.mp4`;
+          episodeInfo.textContent = `Episode ${epNumber}`;
+          episodeTitle.textContent = `Episode ${epNumber}`;
+          document.title = `Jujutsu Kaisen S2 Episode ${epNumber} - AniDox`;
+        }
+
+        document.getElementById("prevEp").addEventListener("click", () => {
+          if (currentEp > 1) {
+            window.location.href = `watch-s2.html?anime=jujutsu-kaisen-s2&ep=${
+              currentEp - 1
+            }`;
+          }
+        });
+
+        document.getElementById("nextEp").addEventListener("click", () => {
+          if (currentEp < 24) {
+            window.location.href = `watch-s2.html?anime=jujutsu-kaisen-s2&ep=${
+              currentEp + 1
+            }`;
+          }
+        });
+
+        // Load initial episode
+        loadEpisode(currentEp);
+      });
+    </script>
+  </body>
+</html>
